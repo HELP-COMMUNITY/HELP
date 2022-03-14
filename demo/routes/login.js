@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
                 if (req.body.tel == "18879828237" && req.body.password == 123) {
                     res.redirect("/");
                 } else {
-                    res.redirect('/');
+                    res.redirect('/home');
                 }
             }
         }
