@@ -47,8 +47,8 @@
 					<b class="caret"></b>
 				</a>
 				<ul class="dropdown-menu extended logout">
-					<li><a href="/usernews"><i class=" fa fa-suitcase"></i>个人信息</a></li>
-					<li><a href="/setting"><i class="fa fa-cog"></i> 设置</a></li>
+					<li><a href="#"><i class=" fa fa-suitcase"></i>个人信息</a></li>
+					<li><a href="#"><i class="fa fa-cog"></i> 设置</a></li>
 					<li><a href="/login"><i class="fa fa-key"></i>退出登入</a></li>
 				</ul>
 			</li>
@@ -61,90 +61,49 @@
 	<!--header end-->
 	<!--sidebar start-->
 	<aside>
-		<div id="sidebar" class="nav-collapse">
-			<!-- sidebar menu start-->
-			<div class="leftside-navigation">
-				<ul class="sidebar-menu" id="nav-accordion">
-					<li class="sub-menu">
-						<a href="javascript:;">
-							<i class="fa fa-th"></i>
-							<span>社区主页</span>
-						</a>
-						<ul class="sub">
-							<li><a href="/home">社区主页</a></li>
-						</ul>
-					</li>
-					<li class="sub-menu">
-						<a href="javascript:;">
-							<i class="fa fa-envelope"></i>
-							<span>社区关注</span>
-						</a>
-						<ul class="sub">
-							<li><a href="/guanzhu">社区关注</a></li>
-						</ul>
-					</li>
-					<li class="sub-menu">
-						<a href="javascript:;">
-							<i class="fa fa-envelope"></i>
-							<span>社区定位</span>
-						</a>
-						<ul class="sub">
-							<li><a href="/dingwei">社区定位</a></li>
-						</ul>
-					</li>
-					<li class="sub-menu">
-						<a href="javascript:;">
-							<i class="fa fa-envelope"></i>
-							<span>发布任务</span>
-						</a>
-						<ul class="sub">
-							<li><a href="/task">发布任务</a></li>
-						</ul>
-					</li>
-					<li class="sub-menu">
-						<a href="javascript:;">
-							<i class="fa fa-envelope"></i>
-							<span>消息</span>
-						</a>
-						<ul class="sub">
-							<li><a href="/info">消息</a></li>
-						</ul>
-					</li>
-					<li class="sub-menu">
-						<a href="javascript:;">
-							<i class="fa fa-envelope"></i>
-							<span>更多服务</span>
-						</a>
-						<ul class="sub">
-							<li><a href="/touch">联系客服</a></li>
-						
-						</ul>
-					</li>
-					
-					
-				      </div>
-			<!-- sidebar menu end-->
-		</div>
-	</aside>
+        <div id="sidebar" class="nav-collapse">
+            <!-- sidebar menu start-->
+            <div class="leftside-navigation">
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-th"></i>
+                            <span>信息表</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="active" href="/usertable">用户表</a></li>
+                            <li><a class="active" href="/tasktable">任务表</a></li>
+                            <li><a class="active" href="/table">反馈表</a></li>
+                            <!-- <li><a href="/responsive_table">Responsive Table</a></li> -->
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-envelope"></i>
+                            <span>邮箱</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/mail_compose">发送邮箱</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/login">
+                            <i class="fa fa-user"></i>
+                            <span>退出管理员页面</span>
+                        </a>
+                    </li>
+                </ul>            </div>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
 <section id="main-content">
 	<section class="wrapper">
 	
 	<div class="gallery">
-		<h2 class="w3ls_head">消息</h2>
+		<h2 class="w3ls_head">任务信息添加页面</h2>
 		<div class="gallery-grids">
 				<div class="gallery-top-grids">
 					<div class="col-sm-4 gallery-grids-left">
-						<div>
-							<h1>我接收的任务</h1>
-							<h4>已完成</h4>
-							<h4>未完成</h4>
-						</div>
-						<div>
-							<h1>我发布的任务</h1>
-							<h4>已接单</h4>
-							<h4>未接单</h4>
-						</div>
-									
 						<!-- <button class="button" href="/">查看详情</button> -->
                         
 					</div><div class="clearfix"> </div>
@@ -152,13 +111,32 @@
 		
 	</div>
 	</div>
-	<!-- //gallery -->
-
+    <!-- <div class="a" style="margin-left: 65px;
+    margin-top: -53px;"> -->
+<form action="/tasktable/addtask" method="POST">
+  <input type="hidden" name="id"  placeholder="请填写ID"  /><br/>
+   <p>标题</p><input type="text" name="name"  placeholder="标题"/>
+    <br> 
+    <p>内容</p><input type="text" name="text"  placeholder="内容"/>
+    <br> 
+    <p>发布时间</p> <input type="text" name="time"  placeholder="发布时间"/>
+    <br/>
+    <p>help币</p> <input type="text" name="money"  placeholder="help币"/>
+    <br/>
+    <p>电话号码</p> <input type="text" name="tel"  placeholder="密码"/>
+    <br/>
+    <p>地址</p><input type="text" name="address"  placeholder="地址"/>
+    <br/>
+    
+    <input type="submit"/>
+</form>
+<!-- </div> -->
 </section>
 </section>
 
 <!--main content end-->
 </section>
+      
     <script src="/javascripts/bootstrap.js"></script>
     <script src="/javascripts/jquery.dcjqaccordion.2.7.js"></script>
     <script src="/javascripts/scripts.js"></script>

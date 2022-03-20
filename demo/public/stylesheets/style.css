@@ -8,7 +8,18 @@ html, body{
     font-size: 100%;
     overflow-x: hidden;
     background: url(../images/bg.jpg) no-repeat 0px 0px;
-	background-size:cover;
+	/* background-size:cover; */
+}
+.p{
+    font-size: 200%;
+}
+.serve{
+    text-align: center;
+    color: pink;
+}
+.biaoti{
+    text-align: center;
+    color: #94596d;
 }
 .button {
     background-color: #dd8eb8; /* Green */
@@ -19,7 +30,7 @@ html, body{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-left: 124px;
+    margin-left: 10%;
 }
 body a{
 	transition: 0.5s all ease;
@@ -29,6 +40,14 @@ body a{
 	-ms-transition: 0.5s all ease;
 	text-decoration:none;
 }
+.weixin{
+    height:30%;
+    margin-left:2%;
+    }
+.picture{
+    margin-left: 15%; 
+    
+    }
 h1,h2,h3,h4,h5,h6{
 	margin:0;			   
 }
@@ -1604,12 +1623,13 @@ ul.bs-glyphicons-list {
     padding: 0;
 }
 .w3ls_head {
-    font-size: 30px;
+    font-size: 40px;
     color: #000000;
-    margin-bottom: 2em;
-    letter-spacing: 2px;
+    margin-bottom: 0em;
+    letter-spacing: 29px;
     text-transform: uppercase;
     text-align: center;
+    font-style: oblique;
 }
 .agile-grid{
 	background: #eef9f0;
@@ -2305,6 +2325,14 @@ ul.inbox-pagination li {
 	text-align:right !important;
 	color: #FF5722 !important;
 }
+.w3layouts-main h3 {
+    color: #8b5c7e;
+    font-size:22px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    padding-bottom:15px;
+    text-align:center;
+    }
 .gallery-grid img {
     width: 100%;
     cursor: pointer;
@@ -2330,8 +2358,8 @@ ul.inbox-pagination li {
     left: 6%;
     bottom: -100%;
     text-align: center;
-    width: 340px;
-    height: 200px;
+    width: 140px;
+    height: 80px;
     -webkit-transition: .5s all;
     transition: .5s all;
     -moz-transition: .5s all;
@@ -2372,6 +2400,16 @@ ul.inbox-pagination li {
 }
 /*--//header--*/
 /*--login--*/
+input.hhhh{
+    width: 100%;
+    padding: 15px 0px 15px 15px;
+    border: 1px solid rgb(233, 149, 191);
+    outline: none;
+    font-size: 14px;
+    color: rgb(228, 176, 218);
+    margin: 14px 0px;
+	background: none;
+}
 input.ggg{
     width: 100%;
     padding: 15px 0px 15px 15px;
@@ -2386,7 +2424,7 @@ input.ggg{
     font-size: 16px;
     color: #fff;
     float: left;
-    width: 32%;
+    width: 100%;
 	margin-top: 8px;
 }
 .w3layouts-main h6 {
@@ -2441,7 +2479,7 @@ input.ggg{
 	-ms-transition:0.5s all;
 }
 .w3layouts-main p a {
-    color: #f0bcb4;
+    color: #d495aa;
     padding: 10px;
 }
 .w3layouts-main p a:hover {
@@ -2836,8 +2874,8 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
     width: 33%;
 }
 .captn {
-    width: 308px;
-    height: 180px;
+    width: 170px;
+    height: 110px;
 }
 .captn h4 {
     margin: 3em 0 0 0;

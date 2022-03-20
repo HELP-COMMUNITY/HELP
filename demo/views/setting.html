@@ -20,6 +20,55 @@
 <!-- //font-awesome icons -->
     <script src="/javascripts/jquery2.0.3.min.js"></script>
 </head>
+<style>
+	.wrapper .input-data{
+		width: 100%;
+		height: 40px;
+		position: relative;
+	}
+	.wrapper .input-data input{
+		width: 100%;
+		height: 100%;
+		border: none;
+		border-bottom: 2px solid silver;
+		font-size: 17px;
+	}
+	.input-data input:focus ~ label,
+	.input-data input:valid ~ label{
+		transform: translateY(-20px);
+		font-size: 15px;
+		color: #4158D0;
+	}
+	.wrapper .input-data label{
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+		color: grey;
+		pointer-events: none;
+		transition: all 0.3s ease;
+	}
+	.wrapper .input-data .underline{
+		position: absolute;
+		bottom: 0px;
+		height: 2px;
+		width: 100%;
+	}
+	.input-data .underline:before{
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: 100%;
+		background: #4158D0;
+		transform: scaleX(0);
+		transition:transform 0.3s ease;
+	}
+	
+	.input-data input:focus ~ .underline:before,
+	.input-data input:valid ~ .underline:before{
+		transform: scaleX(1);
+	}
+	
+	</style>
 <body>
 	<section id="container">
 	<!--header start-->
@@ -42,7 +91,8 @@
 			<!-- user login dropdown start-->
 			<li class="dropdown">
 				<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-					<img alt="" src="/images/2.png">
+					<!-- <img alt="" src="/images/2.png"> -->
+					<img src="/images/2.png" alt="" id="img-txz" style="width: 3rem" class="aui-img-round user-img"/><hr>
 					<span class="username">小路</span>
 					<b class="caret"></b>
 				</a>
@@ -68,7 +118,7 @@
 					<li class="sub-menu">
 						<a href="javascript:;">
 							<i class="fa fa-th"></i>
-							<span>社区主页</span>
+							<span>社区定位</span>
 						</a>
 						<ul class="sub">
 							<li><a href="/home">社区主页</a></li>
@@ -130,24 +180,37 @@
 	<section class="wrapper">
 	
 	<div class="gallery">
-		<h2 class="w3ls_head">消息</h2>
-		<div class="gallery-grids">
-				<div class="gallery-top-grids">
-					<div class="col-sm-4 gallery-grids-left">
-						<div>
-							<h1>我接收的任务</h1>
-							<h4>已完成</h4>
-							<h4>未完成</h4>
-						</div>
-						<div>
-							<h1>我发布的任务</h1>
-							<h4>已接单</h4>
-							<h4>未接单</h4>
-						</div>
-									
-						<!-- <button class="button" href="/">查看详情</button> -->
-                        
-					</div><div class="clearfix"> </div>
+		<h3 class="w3ls_head">设置</h3><hr>
+		<div class="clearfix"> </div>
+		<div class="input-data">
+			<input type="file" accept="image/*" id="file-txz" name="file" onchange="upload('#file-txz', '#img-txz');"  class="fileInput"  value="" />
+			<div class="underline"></div>
+			<label>修改头像</label>
+			</div><br>
+			<!-- <img src="/images/2.png" id="img-txz" style="width: 3rem" class="aui-img-round user-img"/><hr> -->
+	
+        <div class="input-data">
+				<input type="text" required="" />
+				<div class="underline"></div>
+				<label>用户名</label>
+				</div><br>
+				<div class="input-data">
+					<input type="text" required="" />
+					<div class="underline"></div>
+					<label>联系电话</label>
+					</div><br>
+					<div class="input-data">
+						<input type="text" required="" />
+						<div class="underline"></div>
+						<label>性别</label>
+						</div><br>
+						<div class="input-data">
+							<input type="text" required="" />
+							<div class="underline"></div>
+							<label>个人简介</label>
+							</div><br>
+				<div class="clearfix"> </div>
+				<button class="button">确认修改</button>
 				    <script src="/javascripts/lightbox-plus-jquery.min.js"> </script>
 		
 	</div>
@@ -156,7 +219,21 @@
 
 </section>
 </section>
+	<script type="text/javascript">
+    var upload = function (c, d) {
+        "use strict";
+        var $c = document.querySelector(c),
+            $d = document.querySelector(d),
+            file = $c.files[0],
+            reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function (e) {
+            $d.setAttribute("src", e.target.result);
+        };
+    };
 
+
+</script>
 <!--main content end-->
 </section>
     <script src="/javascripts/bootstrap.js"></script>

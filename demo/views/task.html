@@ -47,8 +47,8 @@
 					<b class="caret"></b>
 				</a>
 				<ul class="dropdown-menu extended logout">
-					<li><a href="#"><i class=" fa fa-suitcase"></i>个人信息</a></li>
-					<li><a href="#"><i class="fa fa-cog"></i> 设置</a></li>
+					<li><a href="/usernews"><i class=" fa fa-suitcase"></i>个人信息</a></li>
+					<li><a href="/setting"><i class="fa fa-cog"></i> 设置</a></li>
 					<li><a href="/login"><i class="fa fa-key"></i>退出登入</a></li>
 				</ul>
 			</li>
@@ -80,7 +80,7 @@
 							<span>社区关注</span>
 						</a>
 						<ul class="sub">
-							<li><a href="/homeguan">社区关注</a></li>
+							<li><a href="/guanzhu">社区关注</a></li>
 						</ul>
 					</li>
 					<li class="sub-menu">
@@ -89,7 +89,7 @@
 							<span>社区定位</span>
 						</a>
 						<ul class="sub">
-							<li><a href="/homeding">社区定位</a></li>
+							<li><a href="/dingwei">社区定位</a></li>
 						</ul>
 					</li>
 					<li class="sub-menu">
@@ -134,8 +134,23 @@
 		<div class="gallery-grids">
 				<div class="gallery-top-grids">
 					<div class="col-sm-4 gallery-grids-left">
+						<form action="/task" method="post">
+							<input type="text" class="hhhh" name="name"style="background: #f0bcb4;color:#32323a;
+							                            font-style: oblique;font-size: revert;" placeholder="标题" required="">
+							<input type="text" class="hhhh" name="text"style="background: #f0bcb4;color:#32323a;
+							                            font-style: oblique;font-size: revert;" placeholder="内容" required="">
+							<input type="text" class="hhhh" name="time"style="background: #f0bcb4;color:#32323a;
+							                            font-style: oblique;font-size: revert;" placeholder="发布时间" required="">
+							<input type="int" class="hhhh" name="money"style="background: #f0bcb4;color:#32323a;
+							                            font-style: oblique;font-size: revert;" placeholder="help币数量" required="">
+							<input type="int" class="hhhh" name="tel"style="background: #f0bcb4;color:#32323a;
+							                            font-style: oblique;font-size: revert;" placeholder="电话号码" required="">
+							<input type="text" class="hhhh" name="address"style="background: #f0bcb4;color:#32323a;
+							                            font-style: oblique;font-size: revert;" placeholder="地址" required="">
+							
+							<div class="clearfix"></div>
+							<button class="button">确认发布</button>				
 						<!-- <button class="button" href="/">查看详情</button> -->
-                        
 					</div><div class="clearfix"> </div>
 				    <script src="/javascripts/lightbox-plus-jquery.min.js"> </script>
 		

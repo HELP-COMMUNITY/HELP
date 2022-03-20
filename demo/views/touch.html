@@ -47,8 +47,8 @@
 					<b class="caret"></b>
 				</a>
 				<ul class="dropdown-menu extended logout">
-					<li><a href="#"><i class=" fa fa-suitcase"></i>个人信息</a></li>
-					<li><a href="#"><i class="fa fa-cog"></i> 设置</a></li>
+					<li><a href="/usernews"><i class=" fa fa-suitcase"></i>个人信息</a></li>
+					<li><a href="/setting"><i class="fa fa-cog"></i> 设置</a></li>
 					<li><a href="/login"><i class="fa fa-key"></i>退出登入</a></li>
 				</ul>
 			</li>
@@ -80,7 +80,7 @@
 							<span>社区关注</span>
 						</a>
 						<ul class="sub">
-							<li><a href="/homeguan">社区关注</a></li>
+							<li><a href="/guanzhu">社区关注</a></li>
 						</ul>
 					</li>
 					<li class="sub-menu">
@@ -89,7 +89,7 @@
 							<span>社区定位</span>
 						</a>
 						<ul class="sub">
-							<li><a href="/homeding">社区定位</a></li>
+							<li><a href="/dingwei">社区定位</a></li>
 						</ul>
 					</li>
 					<li class="sub-menu">
@@ -135,7 +135,20 @@
 				<div class="gallery-top-grids">
 					<div class="col-sm-4 gallery-grids-left">
 						<!-- <button class="button" href="/">查看详情</button> -->
-                        
+                        <form action="/touch" method="post">
+							<input type="text" class="hhhh" name="name"style="background: #f0bcb4;color:#32323a;
+							                            font-style: oblique;font-size: revert;" placeholder="标题" required="">
+							<input type="text" class="hhhh" name="text"style="background: #f0bcb4;color:#32323a;
+							                            font-style: oblique;font-size: revert;"required="" placeholder="内容">
+							<input type="text" class="hhhh" name="time"style="background: #f0bcb4;color:#32323a;
+							                            font-style: oblique;font-size: revert;" placeholder="当前时间" required="">
+							<input type="int" class="hhhh" name="tel"style="background: #f0bcb4;color:#32323a;
+							                            font-style: oblique;font-size: revert;" placeholder="电话号码" required="">
+							<input type="text" class="hhhh" name="address"style="background: #f0bcb4;color:#32323a;
+							                            font-style: oblique;font-size: revert;" placeholder="地址" required="">
+							
+							<div class="clearfix"></div>
+							<button class="button">确认提交</button>	
 					</div><div class="clearfix"> </div>
 				    <script src="/javascripts/lightbox-plus-jquery.min.js"> </script>
 		

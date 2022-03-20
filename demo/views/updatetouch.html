@@ -100,7 +100,7 @@
 	<section class="wrapper">
 	
 	<div class="gallery">
-		<h2 class="w3ls_head">用户信息添加页面</h2>
+		<h2 class="w3ls_head">反馈信息批阅页面</h2>
 		<div class="gallery-grids">
 				<div class="gallery-top-grids">
 					<div class="col-sm-4 gallery-grids-left">
@@ -111,36 +111,31 @@
 		
 	</div>
 	</div>
-    <!-- <div class="a" style="margin-left: 65px;
-    margin-top: -53px;"> -->
-<form action="/usertable/adduser" method="POST">
-  <input type="hidden" name="id"  placeholder="请填写ID"  /><br/>
-   <p>用户名</p><input type="text" name="name"  placeholder="用户名"/>
-    <br> 
-    <p>电话号码</p><input type="text" name="tel"  placeholder="电话号码"/>
-    <br> 
-    <p>身份证</p> <input type="text" name="idcard"  placeholder="身份证"/>
-    <br/>
-    <p>密码</p><input type="text" name="password"  placeholder="密码"/>
-    <br/>
+        <form action="/table/updatetouch" method="POST">
+            <input type="hidden" name="id" value="<%=obj.id%>" placeholder="请填写ID"  /><br/>
+          <p>标题</p>  <input type="text" name="name" value="<%=obj.name%>" placeholder="用户名"/>
+            <br/>
+            <p>内容</p>   <input type="text" name="text" value="<%=obj.text%>" placeholder="电话号码"/>
+            <br/>
+            <p>电话号码</p>  <input type="text" name="tel" value="<%=obj.tel%>" placeholder="身份证"/>
+            <br/>
+            <p>地址</p> <input type="text" name="address" value="<%=obj.address%>" placeholder="密码"/>
+            <br/>
+            <p>是否批阅</p> <input type="text" name="refer" value="<%=obj.refer%>" placeholder="是否批阅"/>
+            <br/>
+            
+            <input type="submit"/>
+        </form>
+
+  
+        <script src="/javascripts/bootstrap.js"></script>
+        <script src="/javascripts/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="/javascripts/scripts.js"></script>
+        <script src="/javascripts/jquery.slimscroll.js"></script>
+        <script src="/javascripts/jquery.nicescroll.js"></script>
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
+        <script src="/javascripts/jquery.scrollTo.js"></script>
+    <!-- gallery -->
     
-    <input type="submit"/>
-</form>
-<!-- </div> -->
-</section>
-</section>
-
-<!--main content end-->
-</section>
-      
-    <script src="/javascripts/bootstrap.js"></script>
-    <script src="/javascripts/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="/javascripts/scripts.js"></script>
-    <script src="/javascripts/jquery.slimscroll.js"></script>
-    <script src="/javascripts/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-    <script src="/javascripts/jquery.scrollTo.js"></script>
-<!-- gallery -->
-
-</body>
-</html>
+    </body>
+    </html>

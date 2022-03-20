@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<head>
+<title>Responsive_table</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link rel="stylesheet" href="/stylesheets/bootstrap.min.css" >
+<!-- //bootstrap-css -->
+<!-- Custom CSS -->
+<link href="/stylesheets/style.css" rel='stylesheet' type='text/css' />
+<link href="/stylesheets/style-responsive.css" rel="stylesheet"/>
+<!-- font CSS -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="/stylesheets/font.css" type="text/css"/>
+<link href="/stylesheets/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<script src="/javascripts/jquery2.0.3.min.js"></script>
+
+</head>
+<body>
+  <section id="container">
+  <!--header start-->
+  <header class="header fixed-top clearfix">
+  <!--logo start-->
+  <div class="brand">
+      <a href="/index" class="logo">
+      管理页面
+      </a>
+      <div class="sidebar-toggle-box">
+          <div class="fa fa-bars"></div>
+      </div>
+  </div>
+  <div class="top-nav clearfix">
+      <!--search & user info start-->
+      <ul class="nav pull-right top-menu">
+          <li>
+              <input type="text" class="form-control search" placeholder=" Search">
+          </li>
+          <!-- user login dropdown start-->
+          <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                  <img alt="" src="/images/2.png">
+                  <span class="username">小路</span>
+                  <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu extended logout">
+                  <li><a href="#"><i class=" fa fa-suitcase"></i>个人信息</a></li>
+                  <li><a href="#"><i class="fa fa-cog"></i> 设置</a></li>
+                  <li><a href="/login"><i class="fa fa-key"></i>退出登入</a></li>
+              </ul>
+          </li>
+          <!-- user login dropdown end -->
+         
+      </ul>
+      <!--search & user info end-->
+  </div>
+  </header>
+  <!--header end-->
+  <!--sidebar start-->
+  <aside>
+      <div id="sidebar" class="nav-collapse">
+          <!-- sidebar menu start-->
+          <div class="leftside-navigation">
+              <ul class="sidebar-menu" id="nav-accordion">
+                  <li class="sub-menu">
+                      <a href="javascript:;">
+                          <i class="fa fa-th"></i>
+                          <span>信息表</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="active" href="/usertable">用户表</a></li>
+                          <li><a class="active" href="/tasktable">任务表</a></li>
+                          <li><a class="active" href="/basic_table">反馈表</a></li>
+                          <!-- <li><a href="/responsive_table">Responsive Table</a></li> -->
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;">
+                          <i class="fa fa-envelope"></i>
+                          <span>邮箱</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a href="/mail_compose">发送邮件</a></li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="/login">
+                          <i class="fa fa-user"></i>
+                          <span>退出管理员页面</span>
+                      </a>
+                  </li>
+              </ul>            </div>
+          <!-- sidebar menu end-->
+      </div>
+  </aside>
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+		<div class="table-agile-info">
+ <div class="panel panel-default">
+    <div class="panel-heading">
+    用户反馈信息表
+    </div>
+    <div>
+      <table class="table" ui-jq="footable" ui-options='{
+        "paging": {
+          "enabled": true
+        },
+        "filtering": {
+          "enabled": true
+        },
+        "sorting": {
+          "enabled": true
+        }}'>
+        <thead>
+          <tr>
+              <td colspan="7">
+                  <form action="/table" method="post">
+                      <input type="text" name="sea" placeholder="搜索">
+                      <input type="submit">
+                  </form>
+              </td>
+          </tr>
+        <tr>
+          <td>ID<span class="upBtn"></span><span class="downBtn"></span></td>
+          <th>标题</th>
+          <th>内容</th>
+          <th>留言时间</th>
+          <th data-breakpoints="xs">电话号码</th>
+         <th>地址</th>
+         <th>是否批阅</th>
+
+          <th data-breakpoints="xs sm md" data-title="DOB">按钮</th>
+        </tr>
+      </thead>
+          <tbody id="showdata">
+              <% for(var d of data){ %>
+                  <tr>
+                      <td><%=d.id %></td>
+                      <td><%=d.name %></td>
+                      <td><%=d.text %></td>
+                      <td><%=d.time %></td>
+                      <td><%=d.tel %></td>
+                      <td><%=d.address %></td>
+                      <td><%=d.refer %></td>
+                      <td>
+                          <input data-id="<%=d.id %>" type="button" value="删除" class="del3_button"/>
+                          <input data-id="<%=d.id %>"  type="button" value="批阅" class="upd3_button"/></td>
+                  </tr>
+                  <% } %>
+          </tbody>
+          <tfoot>
+              <tr>
+                  <td colspan="6">
+                      <input type ="button" value="上一页" id="lastpage"/>
+                      <input type ="button" value="下一页" id="nextpage"/>
+                  </td>
+              </tr>
+          </tfoot>
+      </table>
+  </div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<script>
+    Array.from(document.getElementsByClassName("del3_button")).forEach(i=>{
+    i.onclick = function(){
+        let ind = this.getAttribute("data-id");
+        window.location.href = '/table/del/'+ind;
+    }
+})
+Array.from(document.getElementsByClassName("upd3_button")).forEach(i=>{
+    i.onclick = function(){
+        let ind = this.getAttribute("data-id"); 
+        window.location.href = '/table/updatetouch/'+ind;
+    }
+})
+
+document.getElementById('nextpage').onclick = function(){
+    window.location.href="/table/nextpage";
+};
+document.getElementById('lastpage').onclick = function(){
+    window.location.href="/table/lastpage";
+};
+</script>
+    <script src="/javascripts/bootstrap.js"></script>
+    <script src="/javascripts/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="/javascripts/scripts.js"></script>
+    <script src="/javascripts/jquery.slimscroll.js"></script>
+    <script src="/javascripts/jquery.nicescroll.js"></script>
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
+    <script src="/javascripts/jquery.scrollTo.js"></script>
+</body>
+</html>

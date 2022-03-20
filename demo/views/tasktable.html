@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-<title>Mail_compose</title>
+<title>Responsive_table</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -82,7 +82,7 @@
                             <span>邮箱</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="/mail_compose">Compose Mail</a></li>
+                            <li><a href="/mail_compose">发送邮件</a></li>
                         </ul>
                     </li>
                     <li>
@@ -99,78 +99,101 @@
 <!--main content start-->
 <section id="main-content">
 	<section class="wrapper">
-		<!-- page start-->
-		<div class="mail-w3agile">
-        <div class="row">
-            <div class="col-sm-9 mail-w3agile">
-                <section class="panel">
-                    <header class="panel-heading wht-bg">
-                       <h4 class="gen-case">发送邮件
-                           <form action="#" class="pull-right mail-src-position">
-                            <div class="input-append">
-                                <input type="text" class="form-control " placeholder="Search Mail">
-                            </div>
-                        </form>
-                       </h4>
-                    </header>
-                    <div class="panel-body">
-                        <div class="compose-btn pull-right">
-                            <button class="btn btn-primary btn-sm"><i class="fa fa-check"></i> Send</button>
-                            <button class="btn btn-sm"><i class="fa fa-times"></i> Discard</button>
-                            <button class="btn btn-sm">Draft</button>
-                        </div>
-                        <div class="compose-mail">
-                            <form role="form-horizontal" method="post">
-                                <div class="form-group">
-                                    <label for="to" class="">To:</label>
-                                    <input type="text" tabindex="1" id="to" class="form-control">
-
-                                    <div class="compose-options">
-                                        <a onclick="$(this).hide(); $('#cc').parent().removeClass('hidden'); $('#cc').focus();" href="javascript:;">Cc</a>
-                                        <a onclick="$(this).hide(); $('#bcc').parent().removeClass('hidden'); $('#bcc').focus();" href="javascript:;">Bcc</a>
-                                    </div>
-                                </div>
-
-                                <div class="form-group hidden">
-                                    <label for="cc" class="">Cc:</label>
-                                    <input type="text" tabindex="2" id="cc" class="form-control">
-                                </div>
-
-                                <div class="form-group hidden">
-                                    <label for="bcc" class="">Bcc:</label>
-                                    <input type="text" tabindex="2" id="bcc" class="form-control">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="subject" class="">Subject:</label>
-                                    <input type="text" tabindex="1" id="subject" class="form-control">
-                                </div>
-
-                                <div class="compose-editor">
-                                    <textarea class="wysihtml5 form-control" rows="9"></textarea>
-                                    <input type="file" class="default">
-                                </div>
-                                <div class="compose-btn">
-                                    <button class="btn btn-primary btn-sm"><i class="fa fa-check"></i> Send</button>
-                                    <button class="btn btn-sm"><i class="fa fa-times"></i> Discard</button>
-                                    <button class="btn btn-sm">Draft</button>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-        <!-- page end-->
-		 </div>
+		<div class="table-agile-info">
+ <div class="panel panel-default">
+    <div class="panel-heading">
+     任务表
+    </div>
+    <div>
+      <table class="table" ui-jq="footable" ui-options='{
+        "paging": {
+          "enabled": true
+        },
+        "filtering": {
+          "enabled": true
+        },
+        "sorting": {
+          "enabled": true
+        }}'>
+        <thead>
+          <tr>
+              <td colspan="8">
+               <input type="button" value="新增" id="add2_button"/><br>
+                  <form action="/tasktable" method="post">
+                      <input type="text" name="sea" placeholder="搜索">
+                      <input type="submit">
+                  </form>
+              </td>
+          </tr>
+        <tr>
+          <td>ID<span class="upBtn"></span><span class="downBtn"></span></td>
+          <th>标题</th>
+          <th>内容</th>
+          <th>发布时间</th>
+          <th>help币</th>
+          <th data-breakpoints="xs">电话号码</th>
+         <th>地址</th>
+          <th data-breakpoints="xs sm md" data-title="DOB">按钮</th>
+        </tr>
+      </thead>
+          <tbody id="showdata">
+              <% for(var d of data){ %>
+                  <tr>
+                      <td><%=d.id %></td>
+                      <td><%=d.name %></td>
+                      <td><%=d.text %></td>
+                      <td><%=d.time %></td>
+                      <td><%=d.money %></td>
+                      <td><%=d.tel %></td>
+                      <td><%=d.address %></td>
+                      <td>
+                          <input data-id="<%=d.id %>" type="button" value="删除" class="del2_button"/>
+                          <input data-id="<%=d.id %>"  type="button" value="修改" class="upd2_button"/></td>
+                  </tr>
+                  <% } %>
+          </tbody>
+          <tfoot>
+              <tr>
+                  <td colspan="6">
+                      <input type ="button" value="上一页" id="lastpage"/>
+                      <input type ="button" value="下一页" id="nextpage"/>
+                  </td>
+              </tr>
+          </tfoot>
+      </table>
+  </div>
+</div>
+</div>
 </section>
-
 </section>
-
-<!--main content end-->
 </section>
+<script>
+    Array.from(document.getElementsByClassName("del2_button")).forEach(i=>{
+    i.onclick = function(){
+        let ind = this.getAttribute("data-id");
+        window.location.href = '/tasktable/del/'+ind;
+    }
+})
+
+document.getElementById("add2_button").onclick = function(){
+    window.location.href='/tasktable/addpage';
+}
+
+
+Array.from(document.getElementsByClassName("upd2_button")).forEach(i=>{
+    i.onclick = function(){
+        let ind = this.getAttribute("data-id"); 
+        window.location.href = '/tasktable/updatetask/'+ind;
+    }
+})
+
+document.getElementById('nextpage').onclick = function(){
+    window.location.href="/tasktable/nextpage";
+};
+document.getElementById('lastpage').onclick = function(){
+    window.location.href="/tasktable/lastpage";
+};
+</script>
     <script src="/javascripts/bootstrap.js"></script>
     <script src="/javascripts/jquery.dcjqaccordion.2.7.js"></script>
     <script src="/javascripts/scripts.js"></script>

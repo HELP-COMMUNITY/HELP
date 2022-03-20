@@ -11,20 +11,24 @@ var ejs = require('ejs');
 
 var indexRouter = require('./routes/index');
 var errorRouter = require('./routes/error');
-var basic_tableRouter = require('./routes/basic_table');
-var basic_tasktableRouter = require('./routes/basic_tasktable');
+var tableRouter = require('./routes/table');
+var tasktableRouter = require('./routes/tasktable');
 var usertableRouter = require('./routes/usertable');
 var dropzoneRouter = require('./routes/dropzone');
 var homeRouter = require('./routes/home');
-var homeguanRouter = require('./routes/homeguan');
-var homedingRouter = require('./routes/homeding');
 var taskRouter = require('./routes/task');
 var infoRouter = require('./routes/info');
 var touchRouter = require('./routes/touch');
 var loginRouter = require('./routes/login');
+var usernewsRouter = require('./routes/usernews');
+var settingRouter = require('./routes/setting');
 var mail_composeRouter = require('./routes/mail_compose');
 var registrationRouter = require('./routes/registration');
 var responsive_tableRouter = require('./routes/responsive_table');
+var guanzhuRouter = require('./routes/guanzhu');
+var dingweiRouter = require('./routes/dingwei');
+var serveRouter = require('./routes/serve');
+
 var app = express();
 
 // view engine setup
@@ -52,20 +56,24 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/error', errorRouter);
-app.use('/basic_table', basic_tableRouter);
-app.use('/basic_tasktable', basic_tasktableRouter);
+app.use('/table', tableRouter);
+app.use('/tasktable', tasktableRouter);
 app.use('/usertable', usertableRouter);
 app.use('/dropzone', dropzoneRouter);
 app.use('/home', homeRouter);
-app.use('/homeguan', homeguanRouter);
-app.use('/homeding', homedingRouter);
 app.use('/task', taskRouter);
 app.use('/info', infoRouter);
 app.use('/touch', touchRouter);
 app.use('/login', loginRouter);
+app.use('/guanzhu',guanzhuRouter);
+app.use('/dingwei',dingweiRouter);
+app.use('/setting', settingRouter);
+app.use('/usernews', usernewsRouter);
+app.use('/serve', serveRouter);
 app.use('/mail_compose', mail_composeRouter);
 app.use('/registration', registrationRouter);
 app.use('/responsive_table', responsive_tableRouter);
+
 
 // app.use('/users', usersRouter);
 
