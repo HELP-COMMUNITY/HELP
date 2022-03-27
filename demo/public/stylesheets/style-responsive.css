@@ -206,6 +206,14 @@
         top: 0px;
         z-index: 1005;
     }
+    .brand1{
+        width: 100%;
+        float: none;
+        position: fixed;
+        top: 834px;
+        z-index: 1005;
+        background-color: #8b5c7e;
+    }
     .sidebar-toggle-box{
         right: 10px;
     }

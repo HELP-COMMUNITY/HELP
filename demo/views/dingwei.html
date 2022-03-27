@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <head>
 <title>Gallery</title>
@@ -13,6 +12,7 @@
 <link href="/stylesheets/style.css" rel='stylesheet' type='text/css' />
 <link href="/stylesheets/style-responsive.css" rel="stylesheet"/>
 <link rel="stylesheet" href="/stylesheets/lightbox.css">
+<link rel="stylesheet" href="/stylesheets/foot.css">
 <!-- font CSS -->
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <!-- font-awesome icons -->
@@ -28,7 +28,10 @@
 	<!--logo start-->
 	<div class="brand">
 		<a href="/index" class="logo">
-			HELP
+			<img alt="" src="/images/help.png" style="    width: 7rem;
+			margin-top: -38px;
+			margin-left: -42px;" >
+		
 		</a>
 		<div class="sidebar-toggle-box">
 			<div class="fa fa-bars"></div>
@@ -48,9 +51,9 @@
 					<b class="caret"></b>
 				</a>
 				<ul class="dropdown-menu extended logout">
-					<li><a href="/usernews"><i class=" fa fa-suitcase"></i>个人信息</a></li>
+					<li><a href="/usernews"><i class="fa fa-user"></i>个人信息</a></li>
 					<li><a href="/setting"><i class="fa fa-cog"></i> 设置</a></li>
-					<li><a href="/login"><i class="fa fa-key"></i>退出登入</a></li>
+					<li><a href="/login"><i class="fa fa-power-off"></i>退出登入</a></li>
 				</ul>
 			</li>
 			<!-- user login dropdown end -->
@@ -68,8 +71,8 @@
 				<ul class="sidebar-menu" id="nav-accordion">
 					<li class="sub-menu">
 						<a href="javascript:;">
-							<i class="fa fa-th"></i>
-							<span>社区定位</span>
+							<i class="fa fa-bank"></i>
+							<span>社区主页</span>
 						</a>
 						<ul class="sub">
 							<li><a href="/home">社区主页</a></li>
@@ -77,7 +80,7 @@
 					</li>
 					<li class="sub-menu">
 						<a href="javascript:;">
-							<i class="fa fa-envelope"></i>
+							<i class="fa fa-child"></i>
 							<span>社区关注</span>
 						</a>
 						<ul class="sub">
@@ -86,7 +89,7 @@
 					</li>
 					<li class="sub-menu">
 						<a href="javascript:;">
-							<i class="fa fa-envelope"></i>
+							<i class="fa fa-map-marker"></i>
 							<span>社区定位</span>
 						</a>
 						<ul class="sub">
@@ -95,7 +98,7 @@
 					</li>
 					<li class="sub-menu">
 						<a href="javascript:;">
-							<i class="fa fa-envelope"></i>
+							<i class="fa fa-plus-square"></i>
 							<span>发布任务</span>
 						</a>
 						<ul class="sub">
@@ -104,7 +107,7 @@
 					</li>
 					<li class="sub-menu">
 						<a href="javascript:;">
-							<i class="fa fa-envelope"></i>
+							<i class="fa fa-comment"></i>
 							<span>消息</span>
 						</a>
 						<ul class="sub">
@@ -113,7 +116,7 @@
 					</li>
 					<li class="sub-menu">
 						<a href="javascript:;">
-							<i class="fa fa-envelope"></i>
+							<i class="fa fa-qrcode"></i>
 							<span>更多服务</span>
 						</a>
 						<ul class="sub">
@@ -127,56 +130,35 @@
 			<!-- sidebar menu end-->
 		</div>
 	</aside>
-<section id="main-content">
+<section id="main-content" style="position: relative">
 	<section class="wrapper">
 	
 	<div class="gallery">
 		<h2 class="w3ls_head">社区定位</h2>
-        <button class="button" href="#">开启定位</button>
 		<div class="gallery-grids">
 				<div class="gallery-top-grids">
+					<% for(var list of data){ %>
 					<div class="col-sm-4 gallery-grids-left">
 						<div class="gallery-grid">
-							<a class="example-image-link" href="/images/g1.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
-								<img src="/images/g1.jpg" alt="" />
-								<div class="captn">
-									<h4>帮忙带早点</h4>
-									<p>5币</p>
-								</div>
+							<a class="example-image-link" href="<%=list.photo%>" data-lightbox="example-set" data-title="标题：<%=list.name%> <hr> 内容：<%=list.text%> <hr> 发布时间：<%=list.time%> <hr> help币：<%=list.money%><hr> tel：<%=list.tel%> <hr> 地址：<%=list.address%>千米  ">
+								<img src="<%=list.photo%>" alt="" style="width: 12rem"/>
+								
 							</a>
 						</div>
-                        <!-- <button class="button" href="/">查看详情</button> -->
-                        <button class="button" href="/">确认</button>
-					</div>
-					<div class="col-sm-4 gallery-grids-left">
-						<div class="gallery-grid">
-							<a class="example-image-link" href="/images/g2.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
-								<img src="/images/g2.jpg" alt="" />
-								<div class="captn">
-									<h4>帮忙打扫门口卫生</h4>
-									<p>3币</p>
-								</div>
-							</a>
+						<div class="task" style="margin-left: 66%;
+						margin-top: -29%;">
+							<h4>标题:<%=list.name%></h4>
+							<p>money:<%=list.money%></p> 
+							<button class="button" href="/">确认接单</button></div>
 						</div>
-                        <button class="button" href="/">确认</button>
-					</div>
-					<div class="col-sm-4 gallery-grids-left">
-						<div class="gallery-grid">
-							<a class="example-image-link" href="/images/g3.jpg" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
-								<img src="/images/g3.jpg" alt="" />
-								<div class="captn">
-									<h4>帮带快递</h4>
-									<p>5币</p>
-								</div>
-							</a>
-						</div>
-                        <button class="button" href="/">确认</button>
-					</div>
+                       <% } %>
+					
 					<div class="clearfix"> </div>
 				</div>
 					
 					<div class="clearfix"> </div>
 				</div>
+	</div>
 				<div class="clearfix"> </div>
 				    <script src="/javascripts/lightbox-plus-jquery.min.js"> </script>
 		
@@ -186,9 +168,70 @@
 
 </section>
 </section>
+<div class="brand1">
+	<menu class="menu">
 
+		<a href="/home"><button class="menu__item active" style="--bgColorBody: #ffb457; --bgColorItem: #ff8c00;">
+	
+		<svg class="icon" viewBox="0 0 24 24">
+       <path d="M3.8,6.6h16.4" />
+       <path d="M20.2,12.1H3.8" />
+       <path d="M3.8,17.5h16.4" />
+     </svg></a>
+   </button>
+
+   <a href="/guanzhu"><button class="menu__item" style="--bgColorBody: #ff96bd; --bgColorItem: #f54888;">
+     <svg class="icon" viewBox="0 0 24 24">
+       <path d="M6.7,4.8h10.7c0.3,0,0.6,0.2,0.7,0.5l2.8,7.3c0,0.1,0,0.2,0,0.3v5.6c0,0.4-0.4,0.8-0.8,0.8H3.8
+        C3.4,19.3,3,19,3,18.5v-5.6c0-0.1,0-0.2,0.1-0.3L6,5.3C6.1,5,6.4,4.8,6.7,4.8z" />
+       <path d="M3.4,12.9H8l1.6,2.8h4.9l1.5-2.8h4.6" />
+     </svg></a>
+   </button>
+
+   <a href="/task"><button class="menu__item" style="--bgColorBody: #9999fb; --bgColorItem: #4343f5;">
+     <svg class="icon" viewBox="0 0 24 24">
+       <path d="M3.4,11.9l8.8,4.4l8.4-4.4" />
+       <path d="M3.4,16.2l8.8,4.5l8.4-4.5" />
+       <path d="M3.7,7.8l8.6-4.5l8,4.5l-8,4.3L3.7,7.8z" />
+	</a>
+   </button>
+
+   <a href="/info"><button class="menu__item" style="--bgColorBody: #ffe797; --bgColorItem: #e0b115;">
+     <svg class="icon" viewBox="0 0 24 24">
+       <path d="M5.1,3.9h13.9c0.6,0,1.2,0.5,1.2,1.2v13.9c0,0.6-0.5,1.2-1.2,1.2H5.1c-0.6,0-1.2-0.5-1.2-1.2V5.1
+          C3.9,4.4,4.4,3.9,5.1,3.9z" />
+       <path d="M4.2,9.3h15.6" />
+       <path d="M9.1,9.5v10.3" /></a>
+   </button>
+
+   <a href="/usernews"><button class="menu__item" style="--bgColorBody: #cffff1; --bgColorItem:#65ddb7;">
+     <svg class="icon" viewBox="0 0 24 24">
+       <path d="M5.1,3.9h13.9c0.6,0,1.2,0.5,1.2,1.2v13.9c0,0.6-0.5,1.2-1.2,1.2H5.1c-0.6,0-1.2-0.5-1.2-1.2V5.1
+          C3.9,4.4,4.4,3.9,5.1,3.9z" />
+       <path d="M5.5,20l9.9-9.9l4.7,4.7" />
+       <path d="M10.4,8.8c0,0.9-0.7,1.6-1.6,1.6c-0.9,0-1.6-0.7-1.6-1.6C7.3,8,8,7.3,8.9,7.3C9.7,7.3,10.4,8,10.4,8.8z" />
+     </svg></a>
+   </button>
+
+   <div class="menu__border"></div>
+
+ </menu>
+
+ <!-- <div class="svg-container">
+   <svg viewBox="0 0 202.9 45.5">
+     <clipPath id="menu" clipPathUnits="objectBoundingBox" transform="scale(0.0049285362247413 0.021978021978022)">
+       <path d="M6.7,45.5c5.7,0.1,14.1-0.4,23.3-4c5.7-2.3,9.9-5,18.1-10.5c10.7-7.1,11.8-9.2,20.6-14.3c5-2.9,9.2-5.2,15.2-7
+          c7.1-2.1,13.3-2.3,17.6-2.1c4.2-0.2,10.5,0.1,17.6,2.1c6.1,1.8,10.2,4.1,15.2,7c8.8,5,9.9,7.1,20.6,14.3c8.3,5.5,12.4,8.2,18.1,10.5
+          c9.2,3.6,17.6,4.2,23.3,4H6.7z" />
+     </clipPath>
+   </svg>
+ </div> -->
+
+
+</div>
 <!--main content end-->
 </section>
+<script src="/javascripts/foot.js"></script>
     <script src="/javascripts/bootstrap.js"></script>
     <script src="/javascripts/jquery.dcjqaccordion.2.7.js"></script>
     <script src="/javascripts/scripts.js"></script>

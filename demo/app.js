@@ -14,7 +14,6 @@ var errorRouter = require('./routes/error');
 var tableRouter = require('./routes/table');
 var tasktableRouter = require('./routes/tasktable');
 var usertableRouter = require('./routes/usertable');
-var dropzoneRouter = require('./routes/dropzone');
 var homeRouter = require('./routes/home');
 var taskRouter = require('./routes/task');
 var infoRouter = require('./routes/info');
@@ -24,7 +23,6 @@ var usernewsRouter = require('./routes/usernews');
 var settingRouter = require('./routes/setting');
 var mail_composeRouter = require('./routes/mail_compose');
 var registrationRouter = require('./routes/registration');
-var responsive_tableRouter = require('./routes/responsive_table');
 var guanzhuRouter = require('./routes/guanzhu');
 var dingweiRouter = require('./routes/dingwei');
 var serveRouter = require('./routes/serve');
@@ -59,7 +57,6 @@ app.use('/error', errorRouter);
 app.use('/table', tableRouter);
 app.use('/tasktable', tasktableRouter);
 app.use('/usertable', usertableRouter);
-app.use('/dropzone', dropzoneRouter);
 app.use('/home', homeRouter);
 app.use('/task', taskRouter);
 app.use('/info', infoRouter);
@@ -72,8 +69,6 @@ app.use('/usernews', usernewsRouter);
 app.use('/serve', serveRouter);
 app.use('/mail_compose', mail_composeRouter);
 app.use('/registration', registrationRouter);
-app.use('/responsive_table', responsive_tableRouter);
-
 
 // app.use('/users', usersRouter);
 

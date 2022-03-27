@@ -11,7 +11,7 @@
  Target Server Version : 80022
  File Encoding         : 65001
 
- Date: 16/03/2022 18:33:10
+ Date: 23/03/2022 20:22:42
 */
 
 SET NAMES utf8mb4;
@@ -28,7 +28,7 @@ CREATE TABLE `register`  (
   `idcard` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of register
@@ -38,8 +38,8 @@ INSERT INTO `register` VALUES (2, '1', '1', '1', '1');
 INSERT INTO `register` VALUES (10, '1', 'asdfffg', 'sahjbdewyu', '123456');
 INSERT INTO `register` VALUES (12, '2', '3', '4', '55');
 INSERT INTO `register` VALUES (14, 's', 's', 's', '12345');
-INSERT INTO `register` VALUES (15, 'd', 'd', 'dd', 'ddd');
 INSERT INTO `register` VALUES (16, '陆陆', '18879827237', '360222', 'luyuping.');
+INSERT INTO `register` VALUES (20, 'xx', '18879827237', '1234', '1234');
 
 -- ----------------------------
 -- Table structure for task
@@ -53,13 +53,17 @@ CREATE TABLE `task`  (
   `money` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `tel` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `address` int(0) NULL DEFAULT NULL,
+  `style` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `photo` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of task
 -- ----------------------------
-INSERT INTO `task` VALUES (1, '12', '12', '2022-03-15 09:47:54', '12', '12', 12);
+INSERT INTO `task` VALUES (1, '12', '12', '2022-03-15 09:47:54', '12', '12', 12, NULL, '/images/g1.jpg');
+INSERT INTO `task` VALUES (2, '1', '1', '1', '1', '1', 1, NULL, '/images/g2.jpg');
+INSERT INTO `task` VALUES (8, '2', '2', '2', '2', '2', 2, NULL, '/images/g3.jpg');
 
 -- ----------------------------
 -- Table structure for touch
@@ -74,13 +78,13 @@ CREATE TABLE `touch`  (
   `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `refer` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of touch
 -- ----------------------------
 INSERT INTO `touch` VALUES (1, '1', '1', '1', '12', '1', '是');
-INSERT INTO `touch` VALUES (4, '12', '1', '1', '1', '12', '是');
+INSERT INTO `touch` VALUES (5, 'zzz', '111', '2022/3/23', '10086', 'qqqer', '是');
 
 -- ----------------------------
 -- Table structure for user
@@ -94,6 +98,6 @@ CREATE TABLE `user`  (
   `sex` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `text` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;

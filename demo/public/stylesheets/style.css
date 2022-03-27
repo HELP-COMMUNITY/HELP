@@ -2,7 +2,6 @@ h4, h5, h6,
 h1, h2, h3 {margin: 0;}
 ul, ol {margin: 0;}
 p {margin: 0;}
-
 html, body{
 	font-family: 'Roboto', sans-serif;
     font-size: 100%;
@@ -19,18 +18,18 @@ html, body{
 }
 .biaoti{
     text-align: center;
-    color: #94596d;
+    color: white;
 }
 .button {
     background-color: #dd8eb8; /* Green */
     border: none;
     color: white;
-    padding: 15px 47px;
+    padding: 10px 18px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-left: 10%;
+    margin-left: 2%;
 }
 body a{
 	transition: 0.5s all ease;
