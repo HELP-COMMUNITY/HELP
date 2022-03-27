@@ -117,7 +117,7 @@
         }}'>
         <thead>
           <tr>
-              <td colspan="8">
+              <td colspan="9">
                <input type="button" value="新增" id="add2_button"/><br>
                   <form action="/tasktable" method="post">
                       <input type="text" name="sea" placeholder="搜索">
@@ -130,7 +130,10 @@
           <th>标题</th>
           <th>内容</th>
           <th>发布时间</th>
+          <th>截至时间</th>
           <th>help币</th>
+          <th>图片</th>
+          
           <th data-breakpoints="xs">电话号码</th>
          <th>地址</th>
           <th data-breakpoints="xs sm md" data-title="DOB">按钮</th>
@@ -142,8 +145,10 @@
                       <td><%=d.id %></td>
                       <td><%=d.name %></td>
                       <td><%=d.text %></td>
-                      <td><%=d.time %></td>
+                      <td><%=d.uptime %></td>
+                      <td><%=d.downtime %></td>
                       <td><%=d.money %></td>
+                      <td><%=d.photo %></td>
                       <td><%=d.tel %></td>
                       <td><%=d.address %></td>
                       <td>

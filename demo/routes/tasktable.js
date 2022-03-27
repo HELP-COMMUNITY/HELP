@@ -27,8 +27,8 @@ router.get('/addpage',(req,res) =>{
 
 router.post('/addtask',(req,res) => {
 var find ="select name,text from task where name = '" + req.body.name + "' and text = '" + req.body.text + "'";
-  var insertSql ="insert into task(name,text,time,money,tel,address) values(?,?,?,?,?,?)";
-let a =[req.body.name,req.body.text,req.body.time ,req.body.money,req.body.tel,req.body.address];
+  var insertSql ="insert into task(name,text,uptime,downtime,money,photo,tel,address) values(?,?,?,?,?,?,?,?)";
+let a =[req.body.name,req.body.text,req.body.uptime,req.body.downtime,req.body.money,req.body.photo,req.body.tel,req.body.address];
 connection.query(find,function(err,result,fields){
 
 if (err) {
@@ -47,9 +47,9 @@ if (err) {
 
 router.post('/', function (req, res, next) {
 
-  var insql = 'select * from task where name=? or text=? or time=? or money=? or tel=? or address=?';
+  var insql = 'select * from task where name=? or text=? or uptime=? or downtime=? or money=? or photo=? or tel=? or address=?';
    
-  connection.query(insql, [req.body.sea,req.body.sea,req.body.sea,req.body.sea,req.body.sea,req.body.sea], function (err, result, fields) {
+  connection.query(insql, [req.body.sea,req.body.sea,req.body.sea,req.body.sea,req.body.sea,req.body.sea,req.body.sea,req.body.sea], function (err, result, fields) {
     if (err) {
       console.log('err', err);
       return;
@@ -77,8 +77,8 @@ res.render('updatetask',{obj:result[0]});
 });
 
 router.post('/updatetask',(req,res) =>{
-  var sql ='update task set name=?,text=?,time=?,money=?,tel=?,address=? where id= ? '
-  connection.query(sql,[req.body.name,req.body.text,req.body.time ,req.body.money,req.body.tel,req.body.address,req.body.id], function (err, result, fields) {
+  var sql ='update task set name=?,text=?,uptime=?,downtime=?,money=?,photo=?,tel=?,address=? where id= ? '
+  connection.query(sql,[req.body.name,req.body.text,req.body.uptime,req.body.downtime,req.body.money,req.body.photo,req.body.tel,req.body.address,req.body.id], function (err, result, fields) {
     if (err) {
       console.log('err', err);
       return;

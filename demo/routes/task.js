@@ -15,8 +15,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-  var sql = 'insert into task(name,text,time,money,tel,address) values(?,?,?,?,?,?)';
-  connection.query(sql,[req.body.name,req.body.text,req.body.time,req.body.money,req.body.tel,req.body.address], function (err, result, fields) {
+  var sql = 'insert into task(name,text,uptime,downtime,money,photo,tel,address) values(?,?,?,?,?,?,?,?)';
+  connection.query(sql,[req.body.name,req.body.text,req.body.uptime,req.body.downtime,req.body.money,req.body.photo,req.body.tel,req.body.address], function (err, result, fields) {
    
     if (err) {
       console.log('err', err);
