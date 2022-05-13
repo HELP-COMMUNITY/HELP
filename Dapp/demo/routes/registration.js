@@ -18,10 +18,10 @@ connection.connect();
 
 router.post('/', (req, res) => {
   if (req.body.pass !== req.body.cpass) {
-    res.send('密码不一致');
+    alert('密码不一致');
   } else {
     var find = "select tel,password from register where tel = '" + req.body.tel + "' and password = '" + req.body.pass + "'";
-    var insertSql = 'insert into register1(tel,password) values(?,?)';
+    var insertSql = 'insert into register(tel,password) values(?,?)';
     connection.query(find, function (err, result, fields) {
       if (err) {
         console.log('err', err);

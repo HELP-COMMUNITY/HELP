@@ -15,7 +15,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', (req, res) => {
-var selectSQL = " select tel,password from register1 where tel = '" + req.body.tel + "' and password = '" + req.body.password + "'";
+var selectSQL = " select tel,password from register where tel = '" + req.body.tel + "' and password = '" + req.body.password + "'";
   connection.query(selectSQL, function (err, result, fields) {
     if (err) {
       console.log('err', err);

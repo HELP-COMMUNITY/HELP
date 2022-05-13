@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
+var alert =require('alert')
 var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -10,7 +11,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 router.get('/', function (req, res, next) {
-  var sql = 'select * from register1 order by id desc limit 0,3';
+  var sql = 'select * from register order by id desc limit 0,3';
   connection.query(sql, function (err, result, fields) {
       if (err) {
           console.log('err', err);
@@ -26,7 +27,7 @@ router.get('/addpage',(req,res) =>{
 
 
 router.post('/adduser',(req,res) => {
-var find ="select tel,password from register1 where tel = '" + req.body.tel + "' and password = '" + req.body.password + "'";
+var find ="select tel,password from register where tel = '" + req.body.tel + "' and password = '" + req.body.password + "'";
   var insertSql ="insert into register1(tel,password) values(?,?)";
 let a =[req.body.tel,req.body.password];
 connection.query(find,function(err,result,fields){
@@ -35,7 +36,7 @@ if (err) {
   console.log('err', err);
   return;
 } else if(result.length > 0){
-  res.send('已经有这位用户了！')
+  alert('已经有这位用户了！')
 }else{ 
   connection.query(insertSql, a, function (err, result, fields) {
   res.redirect('/usertable');
@@ -47,7 +48,7 @@ if (err) {
 
 router.post('/', function (req, res, next) {
 
-  var insql = 'select * from register1 where  tel=? or password=?';
+  var insql = 'select * from register where  tel=? or password=?';
    
   connection.query(insql, [req.body.sea,req.body.sea], function (err, result, fields) {
     if (err) {
@@ -55,7 +56,7 @@ router.post('/', function (req, res, next) {
       return;
     } else { 
       if (result == '') {
-        res.send('没有此用户哟！');
+        alert('没有此用户哟！');
     }
     else{
       res.render('usertable', { data: result }); }
@@ -64,23 +65,26 @@ router.post('/', function (req, res, next) {
 });
 
 router.get('/del/:id',(req,res) => {
-     if(req.params.id==33){
-       res.send('不可以删除admin超级用户哟！')
+     if(req.params.id==35){
+       alert('不可以删除admin超级用户哟！')
      }else{
-      connection.query("delete from register1 where id='"+req.params.id+"'",function(){
+      connection.query("delete from register where id='"+req.params.id+"'",function(){
         res.redirect('/usertable')
       })
      }
   });
 
 router.get('/updateuser/:id',(req,res)=>{
-  connection.query("select * from register1 where id= ? ",[req.params.id],(err,result)=>{
-res.render('updateuser',{obj:result[0]});
-})
+  if(req.params.id==35){
+    alert('不可以修改admin超级用户哟！')
+  }else{
+   connection.query("update register set tel=?,password=? where id= ?",[req.body.tel,req.body.password,req.body.id],function(){
+     res.redirect('/usertable')
+   })
+  }
 });
-
 router.post('/updateuser',(req,res) =>{
-  var sql ='update register1 set tel=?,password=? where id= ? '
+  var sql ='update register set tel=?,password=? where id= ? '
   connection.query(sql,[req.body.tel,req.body.password,req.body.id], function (err, result, fields) {
     if (err) {
       console.log('err', err);
@@ -90,9 +94,8 @@ router.post('/updateuser',(req,res) =>{
   }
 });
 });
-
 router.get('/nextpage', function (req, res, next) {
-  connection.query("select * from register1 order by id desc limit 3,6", function (err, result, fields) {
+  connection.query("select * from register order by id desc limit 3,6", function (err, result, fields) {
       if (err) {
           console.log('err', err);
           
@@ -100,7 +103,7 @@ router.get('/nextpage', function (req, res, next) {
       });
       });
       router.get('/lastpage', function (req, res, next) {
-        connection.query("select * from register1 order by id desc limit 0,3", function (err, result, fields) {
+        connection.query("select * from register order by id desc limit 0,3", function (err, result, fields) {
             if (err) {
                 console.log('err', err);
                 

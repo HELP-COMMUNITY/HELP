@@ -131,29 +131,27 @@
 				<div class="gallery-top-grids">
 					<div class="col-sm-4 gallery-grids-left">
 						<form action="/task" method="post">
-							<input type="text" class="hhhh" name="photo"style="background: #f0bcb4;color:#32323a;
+							<input class="hhhh" name="photo"style="background: #f0bcb4;color:#32323a;
 							 font-style: oblique;font-size: revert;" placeholder="图片" required="">
+							 <input type="text" class="hhhh" name="id"style="background: #f0bcb4;color:#32323a;
+							 font-style: oblique;font-size: revert;" placeholder="id" required="" id="id">
 							
-							<input type="text" class="hhhh" name="name"style="background: #f0bcb4;color:#32323a;
-							 font-style: oblique;font-size: revert;" placeholder="标题" required="">
+						   <input type="text" class="hhhh" name="name"style="background: #f0bcb4;color:#32323a;
+							 font-style: oblique;font-size: revert;" placeholder="标题" required="" id="headline">
 							<input type="text" class="hhhh" name="text"style="background: #f0bcb4;color:#32323a;
-							  font-style: oblique;font-size: revert;" placeholder="内容" required="">
-							<!-- <input type="text" class="hhhh" name="uptime"style="background: #f0bcb4;color:#32323a;
-							  font-style: oblique;font-size: revert;" placeholder="发布时间" required="">
-							<input type="text" class="hhhh" name="downtime"style="background: #f0bcb4;color:#32323a;
-							  font-style: oblique;font-size: revert;" placeholder="截至时间" required=""> -->
+							  font-style: oblique;font-size: revert;" placeholder="内容" required="" id="content">
 							<input type="int" class="hhhh" name="downtime"style="background: #f0bcb4;color:#32323a;
-							   font-style: oblique;font-size: revert;" placeholder="截止时间（精确到分钟）" required="">
+							   font-style: oblique;font-size: revert;" placeholder="截止时间（精确到分钟）" required="" id="endTime">
 							<input type="int" class="hhhh" name="money"style="background: #f0bcb4;color:#32323a;
-							   font-style: oblique;font-size: revert;" placeholder="help币数量" required="">
+							   font-style: oblique;font-size: revert;" placeholder="help币数量" required="" id="money">
 							<input type="int" class="hhhh" name="tel"style="background: #f0bcb4;color:#32323a;
-							   font-style: oblique;font-size: revert;" placeholder="电话号码" required="">
+							   font-style: oblique;font-size: revert;" placeholder="电话号码" required="" id="phone">
 							<input type="text" class="hhhh" name="address"style="background: #f0bcb4;color:#32323a;
-							   font-style: oblique;font-size: revert;" placeholder="地址" required="">
+							   font-style: oblique;font-size: revert;" placeholder="地址" required="" id="site">
 							
 							<div class="clearfix"></div>
-							<button class="button">确认发布</button>				
-						<!-- <button class="button" href="/">查看详情</button> -->
+							<input type="button" id="btn_transfer" value="提交"  class="button">
+
 					</div><div class="clearfix"> </div>
 				    <script src="/javascripts/lightbox-plus-jquery.min.js"> </script>
 		
@@ -234,7 +232,10 @@
     <script src="/javascripts/jquery.slimscroll.js"></script>
     <script src="/javascripts/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-    <script src="/javascripts/jquery.scrollTo.js"></script>
+	<script src="/javascripts/jquery.scrollTo.js"></script>
+	<script src="/javascripts/web3.min.js"></script>
+
+	<script src="/web3js/ap2.js"></script>
 <!-- gallery -->
 
 </body>
