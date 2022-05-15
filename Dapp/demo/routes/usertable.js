@@ -28,7 +28,7 @@ router.get('/addpage',(req,res) =>{
 
 router.post('/adduser',(req,res) => {
 var find ="select tel,password from register where tel = '" + req.body.tel + "' and password = '" + req.body.password + "'";
-  var insertSql ="insert into register1(tel,password) values(?,?)";
+  var insertSql ="insert into register(tel,password) values(?,?)";
 let a =[req.body.tel,req.body.password];
 connection.query(find,function(err,result,fields){
 

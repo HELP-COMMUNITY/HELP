@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
+var alert=require('alert');
 var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -23,7 +24,10 @@ router.post('/', function (req, res, next) {
       return;
   } else {
      
-      res.redirect('/home');
+    // res.redirect('/task');
+    alert("发布任务成功");
+
+    
   }
 });
 });

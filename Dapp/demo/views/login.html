@@ -19,15 +19,22 @@
 <!-- //font-awesome icons -->
     <script src="/javascripts/jquery2.0.3.min.js"></script>
 </head>
-<body>
+<body id="bgImg" style="background-color: #dbd7d7e3;">
+<!-- 
+<form id="form1" runat="server">
+    <div>
+    <input type="button" id="btn" onclick="javascript:Test();" value="更换主题" />
+    </div>
+    </form> -->
 	
 <div class="log-w3">
-<div class="w3layouts-main">
+<div class="w3layouts-main" style="background-color: #d0c8c8;">
+	
 	<div class="biaoti" style="font-size: 100%;">
 		<h1>
 			<img alt="" src="/images/help.png" style="    width: 13rem;
 			margin-top: -38px;
-			margin-left: -42px;" >
+			" >
 		</h1>
 	</div>
 		<form action="/login" method="post">
@@ -52,6 +59,17 @@
 		<p class="qqq" style="    margin-top: 5%;">没有账号看这里！！<a href="/registration">注册</a></p>
 </div>
 </div>
+<script>
+	function Test() {
+		if (document.getElementById("bgImg").style.backgroundImage.indexOf('../images/bg.jpg') > 0) {
+			document.getElementById("bgImg").style.backgroundImage = "url('../images/111.png')";
+		}
+		else {
+			document.getElementById("bgImg").style.backgroundImage = "url('../images/bg.jpg')";
+		}
+
+	}
+</script>
     <script src="/javascripts/bootstrap.js"></script>
     <script src="/javascripts/jquery.dcjqaccordion.2.7.js"></script>
     <script src="/javascripts/scripts.js"></script>

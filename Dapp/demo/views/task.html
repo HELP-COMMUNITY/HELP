@@ -131,26 +131,35 @@
 				<div class="gallery-top-grids">
 					<div class="col-sm-4 gallery-grids-left">
 						<form action="/task" method="post">
-							<input class="hhhh" name="photo"style="background: #f0bcb4;color:#32323a;
+							<input class="hhhh" name="photo"style="background: #gry; color:#c0c9ea;
 							 font-style: oblique;font-size: revert;" placeholder="图片" required="">
-							 <input type="text" class="hhhh" name="id"style="background: #f0bcb4;color:#32323a;
+							 <input type="text" class="hhhh" name="id"style="background: #gry;color:#c0c9ea;
 							 font-style: oblique;font-size: revert;" placeholder="id" required="" id="id">
-							
-						   <input type="text" class="hhhh" name="name"style="background: #f0bcb4;color:#32323a;
-							 font-style: oblique;font-size: revert;" placeholder="标题" required="" id="headline">
-							<input type="text" class="hhhh" name="text"style="background: #f0bcb4;color:#32323a;
+						   <input type="text" class="hhhh" name="name"style="background: #gry;color:#c0c9ea;
+							 font-style: oblique;font-size: revert;"  placeholder="标题" required="" id="headline">
+							<input type="text" class="hhhh" name="text"style="background: #gry;color:#c0c9ea;
 							  font-style: oblique;font-size: revert;" placeholder="内容" required="" id="content">
-							<input type="int" class="hhhh" name="downtime"style="background: #f0bcb4;color:#32323a;
+							<input type="int" class="hhhh" name="downtime"style="background: #gry;color:#c0c9ea;
 							   font-style: oblique;font-size: revert;" placeholder="截止时间（精确到分钟）" required="" id="endTime">
-							<input type="int" class="hhhh" name="money"style="background: #f0bcb4;color:#32323a;
+							<input type="int" class="hhhh" name="money"style="background: #gry;color:#32323a;
 							   font-style: oblique;font-size: revert;" placeholder="help币数量" required="" id="money">
-							<input type="int" class="hhhh" name="tel"style="background: #f0bcb4;color:#32323a;
+							<input type="int" class="hhhh" name="tel"style="background: #gry;color:#32323a;
 							   font-style: oblique;font-size: revert;" placeholder="电话号码" required="" id="phone">
-							<input type="text" class="hhhh" name="address"style="background: #f0bcb4;color:#32323a;
+							<input type="text" class="hhhh" name="address"style="background: #gry;color:#32323a;
 							   font-style: oblique;font-size: revert;" placeholder="地址" required="" id="site">
 							
 							<div class="clearfix"></div>
-							<input type="button" id="btn_transfer" value="提交"  class="button">
+							<button class="button" id="btn_transfer">确认发布</button>
+							<!-- <div class="clearfix"> 
+								<input type="text" id="ID">
+							 <input type="button" id="btn_transfer2" value="接单">
+								</div>
+
+								<div class="clearfix"> 
+									<input type="text" id="ID2">
+								 <input type="button" id="btn_accomplish1" value="确认完成">
+									</div>
+								 -->
 
 					</div><div class="clearfix"> </div>
 				    <script src="/javascripts/lightbox-plus-jquery.min.js"> </script>
@@ -164,7 +173,7 @@
 <div class="brand1">
 	<menu class="menu">
 
-		<a href="/home"><button class="menu__item " style="--bgColorBody: #ffb457; --bgColorItem: #ff8c00;">
+		<a href="/home"><button class="menu__item " style="--bgColorBody: white; --bgColorItem: #c1b0b0;">
 	
 		<svg class="icon" viewBox="0 0 24 24">
        <path d="M3.8,6.6h16.4" />
@@ -173,7 +182,7 @@
      </svg></a>
    </button>
 
-    <a href="/dingwei"><button class="menu__item" style="--bgColorBody: #ff96bd; --bgColorItem: #f54888;">
+    <a href="/dingwei"><button class="menu__item" style="--bgColorBody: white; --bgColorItem: #c1b0b0;">
      <svg class="icon" viewBox="0 0 24 24">
        <path d="M6.7,4.8h10.7c0.3,0,0.6,0.2,0.7,0.5l2.8,7.3c0,0.1,0,0.2,0,0.3v5.6c0,0.4-0.4,0.8-0.8,0.8H3.8
         C3.4,19.3,3,19,3,18.5v-5.6c0-0.1,0-0.2,0.1-0.3L6,5.3C6.1,5,6.4,4.8,6.7,4.8z" />
@@ -181,7 +190,7 @@
      </svg></a>
    </button>
 
-   <a href="/task"><button class="menu__item active" style="--bgColorBody: #9999fb; --bgColorItem: #4343f5;">
+   <a href="/task"><button class="menu__item active" style="--bgColorBody:white; --bgColorItem: #c1b0b0;">
      <svg class="icon" viewBox="0 0 24 24">
        <path d="M3.4,11.9l8.8,4.4l8.4-4.4" />
        <path d="M3.4,16.2l8.8,4.5l8.4-4.5" />
@@ -189,7 +198,7 @@
 	</a>
    </button>
 
-   <a href="/info"><button class="menu__item" style="--bgColorBody: #ffe797; --bgColorItem: #e0b115;">
+   <a href="/info"><button class="menu__item" style="--bgColorBody: white; --bgColorItem: #c1b0b0;">
      <svg class="icon" viewBox="0 0 24 24">
        <path d="M5.1,3.9h13.9c0.6,0,1.2,0.5,1.2,1.2v13.9c0,0.6-0.5,1.2-1.2,1.2H5.1c-0.6,0-1.2-0.5-1.2-1.2V5.1
           C3.9,4.4,4.4,3.9,5.1,3.9z" />
@@ -197,7 +206,7 @@
        <path d="M9.1,9.5v10.3" /></a>
    </button>
 
-   <a href="/usernews"><button class="menu__item" style="--bgColorBody: #cffff1; --bgColorItem:#65ddb7;">
+   <a href="/usernews"><button class="menu__item" style="--bgColorBody: white; --bgColorItem:#c1b0b0;">
      <svg class="icon" viewBox="0 0 24 24">
        <path d="M5.1,3.9h13.9c0.6,0,1.2,0.5,1.2,1.2v13.9c0,0.6-0.5,1.2-1.2,1.2H5.1c-0.6,0-1.2-0.5-1.2-1.2V5.1
           C3.9,4.4,4.4,3.9,5.1,3.9z" />

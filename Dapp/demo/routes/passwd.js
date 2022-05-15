@@ -13,8 +13,8 @@ router.get('/', function(req, res, next) {
   res.render('passwd');
 });
 router.post('/', (req, res) => {
-  var selectSQL = " select tel,password from register1 where tel = '" + req.body.tel + "' and password = '" + req.body.pass + "'";
-  var updateSql = 'update register1 set password=? where tel=? and password=?';
+  var selectSQL = " select tel,password from register where tel = '" + req.body.tel + "' and password = '" + req.body.pass + "'";
+  var updateSql = 'update register set password=? where tel=? and password=?';
   connection.query(selectSQL, function (err, result, fields) {
     if (err) {
       console.log('err', err);

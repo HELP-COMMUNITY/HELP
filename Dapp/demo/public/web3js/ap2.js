@@ -13,7 +13,6 @@ async function getAccount(){
     // console.log(qyaccounts[0]);
     account=qyaccounts[0]
     $(".showAccount").html(qyaccounts[0]); 
-    Transfer()
 }
 
 const abi=[
@@ -131,7 +130,7 @@ const abi=[
 	}
 ]
 
-var myContract = new web3.eth.Contract(abi,'0x1EEf8EB21f916744d6808a0FB0f630f125448Fa2');
+var myContract = new web3.eth.Contract(abi,'0x8977dA17fb199311FD8DFBfCa4Cebe2dF859eCfB');
 console.log('myContract==>',myContract);
 
 //发布任务
@@ -146,7 +145,7 @@ $('#btn_transfer').click(function(){
 
 	myContract.methods.transfer1(headline,content,endTime,phone,site).send(
 		{from:qyaccounts[0],
-			value:money
+			value:money*1000000000000000000
 		
 		}
 	).then(function(receipt){
@@ -157,11 +156,25 @@ $('#btn_transfer').click(function(){
 
 
 // //接收任务
-// $('#btn_accompilsh').click(function(){
-// 	myContract.methods.accompilsh1(id).send(
-// 		{from:qyaccounts[0]}
-// 	).then(function(receipt){
-// 		console.log(receipt)
-// 		alert("接收任务成功")
-// 	});
-// })
+$('#btn_transfer2').click(function(){
+	var id1=$("#ID").val()
+	myContract.methods.transfer2(id1).send(
+		{
+			from:qyaccounts[0]
+		}
+	).then(function(receipt){
+		console.log(receipt)
+		alert("接收任务成功")
+	});
+})
+$('#btn_accomplish1').click(function(){
+	var id2=$("#ID2").val()
+	myContract.methods.accomplish1(id2).send(
+		{
+			from:qyaccounts[0]
+		}
+	).then(function(receipt){
+		console.log(receipt)
+		alert("确认完成任务")
+	});
+})

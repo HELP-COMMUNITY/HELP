@@ -14,7 +14,7 @@ connection.connect();
 // });
 
 router.get('/', function (req, res, next) {
-  var sql = 'select * from task';
+  var sql = 'select * from task where style="未接单"';
   // var sql1 = 'select * from moredish';
 
   connection.query(sql, function (err, result, fields) {

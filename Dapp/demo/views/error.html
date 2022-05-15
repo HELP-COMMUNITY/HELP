@@ -19,8 +19,15 @@
 <!-- //font-awesome icons -->
     <script src="/javascripts/jquery2.0.3.min.js"></script>
 </head>
-<body>
-<!--main content start-->
+
+<body id="bgImg" >
+
+<form id="form1" runat="server">
+    <div>
+    <input type="button" id="btn" onclick="javascript:Test();" value="更换" />
+    </div>
+    </form>
+
 <div class="eror-w3">
     <a href="/login"><img src="/images/back.png" style="width: 2rem"/></a>
 	<div class="agile-info">
@@ -30,6 +37,18 @@
 		<a href="/login">返回登入 </a>
 	</div>
 </div>
+<script>
+        function Test() {
+            if (document.getElementById("bgImg").style.backgroundImage.indexOf('../images/bg.jpg') > 0) {
+                document.getElementById("bgImg").style.backgroundImage = "url('../images/111.png')";
+            }
+            else {
+                document.getElementById("bgImg").style.backgroundImage = "url('../images/bg.jpg')";
+            }
+ 
+        }
+    </script>
+
     <script src="/javascripts/bootstrap.js"></script>
     <script src="/javascripts/jquery.dcjqaccordion.2.7.js"></script>
     <script src="/javascripts/scripts.js"></script>

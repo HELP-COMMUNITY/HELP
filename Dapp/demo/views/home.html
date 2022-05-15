@@ -133,28 +133,30 @@
 					<div class="col-sm-4 gallery-grids-left">
 						<div class="gallery-grid">
 							<a class="example-image-link" href="<%=list.photo%>" data-lightbox="example-set" 
-								data-title="标题：<%=list.name%> <hr> 
+								data-title="id:<%=list.id%> <hr>
+								标题：<%=list.name%> <hr> 
 								内容：<%=list.text%> <hr>
 								 截至时间：<%=list.downtime%> <hr> 
 								 help币：<%=list.money%><hr> 
 								 tel：<%=list.tel%> <hr> 
 								 地址：<%=list.address%>千米">
+								 <input type="text" id="ID">
+								 <input type="button" id="btn_transfer2" value="接单">
 								<img src="<%=list.photo%>" alt="" style="width: 12rem"/>
 							</a>
 						</div>
 						<div class="task" style="margin-left: 66%;
 						margin-top: -29%;">
-							<h4>标题:<%=list.name%></h4>
-							<p>money:<%=list.money%></p> 
-							<button class="button"  id="btn_accomplish"href="/">确认接单</button></div>
+							<h4>id:<%=list.id%></h4>
+							<p>help币:<%=list.money%></p>
+							<p>状态:<%=list.style%></p>
+
+						</div>
+					</div>
 						</div>
                        <% } %>
 					
-					<div class="clearfix"> </div>
-				</div>
-					
-					<div class="clearfix"> </div>
-				</div>
+			
 	</div>
 				<div class="clearfix"> </div>
 				    <script src="/javascripts/lightbox-plus-jquery.min.js"> </script>
@@ -168,7 +170,7 @@
 <div class="brand1">
 	<menu class="menu">
 
-		<a href="/home"><button class="menu__item active" style="--bgColorBody: #ffb457; --bgColorItem: #ff8c00;">
+		<a href="/home"><button class="menu__item active" style="--bgColorBody: white; --bgColorItem: #c1b0b0;">
 	
 		<svg class="icon" viewBox="0 0 24 24">
        <path d="M3.8,6.6h16.4" />
@@ -177,7 +179,7 @@
      </svg></a>
    </button>
 
-    <a href="/dingwei"> <button class="menu__item" style="--bgColorBody: #ff96bd; --bgColorItem: #f54888;"">
+    <a href="/dingwei"> <button class="menu__item" style="--bgColorBody: white; --bgColorItem: #c1b0b0;">
 			<svg class="icon" viewBox="0 0 24 24">
        <path d="M6.7,4.8h10.7c0.3,0,0.6,0.2,0.7,0.5l2.8,7.3c0,0.1,0,0.2,0,0.3v5.6c0,0.4-0.4,0.8-0.8,0.8H3.8
         C3.4,19.3,3,19,3,18.5v-5.6c0-0.1,0-0.2,0.1-0.3L6,5.3C6.1,5,6.4,4.8,6.7,4.8z" />
@@ -185,7 +187,7 @@
      </a>
    </button>
 
-   <a href="/task"><button class="menu__item" style="--bgColorBody: #9999fb; --bgColorItem: #4343f5;">
+   <a href="/task"><button class="menu__item" style="--bgColorBody: white; --bgColorItem: #c1b0b0;">
      <svg class="icon" viewBox="0 0 24 24">
        <path d="M3.4,11.9l8.8,4.4l8.4-4.4" />
        <path d="M3.4,16.2l8.8,4.5l8.4-4.5" />
@@ -193,7 +195,7 @@
 	</a>
    </button>
 
-   <a href="/info"><button class="menu__item" style="--bgColorBody: #ffe797; --bgColorItem: #e0b115;">
+   <a href="/info"><button class="menu__item" style="--bgColorBody: white; --bgColorItem: #c1b0b0;">
      <svg class="icon" viewBox="0 0 24 24">
        <path d="M5.1,3.9h13.9c0.6,0,1.2,0.5,1.2,1.2v13.9c0,0.6-0.5,1.2-1.2,1.2H5.1c-0.6,0-1.2-0.5-1.2-1.2V5.1
           C3.9,4.4,4.4,3.9,5.1,3.9z" />
@@ -201,7 +203,7 @@
        <path d="M9.1,9.5v10.3" /></a>
    </button>
 
-   <a href="/usernews"><button class="menu__item" style="--bgColorBody: #cffff1; --bgColorItem:#65ddb7;">
+   <a href="/usernews"><button class="menu__item" style="--bgColorBody: white; --bgColorItem:#c1b0b0;">
      <svg class="icon" viewBox="0 0 24 24">
        <path d="M5.1,3.9h13.9c0.6,0,1.2,0.5,1.2,1.2v13.9c0,0.6-0.5,1.2-1.2,1.2H5.1c-0.6,0-1.2-0.5-1.2-1.2V5.1
           C3.9,4.4,4.4,3.9,5.1,3.9z" />
@@ -227,6 +229,9 @@
     <script src="/javascripts/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
     <script src="/javascripts/jquery.scrollTo.js"></script>
+	<script src="/javascripts/web3.min.js"></script>
+	<script src="/web3js/ap2.js"></script>
+	
 <!-- gallery -->
 
 </body>

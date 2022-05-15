@@ -16,7 +16,7 @@ connection.connect();
 //获取到注册页面的信息，并展示出来
 
 router.get('/', function (req, res, next) {
-  var sql = 'select * from register1';
+  var sql = 'select * from register';
   // var sql1 = 'select * from moredish';
 
   connection.query(sql, function (err, result, fields) {

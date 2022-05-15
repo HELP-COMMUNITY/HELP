@@ -77,8 +77,8 @@ res.render('updatetask',{obj:result[0]});
 });
 
 router.post('/updatetask',(req,res) =>{
-  var sql ='update task set name=?,text=?,downtime=?,money=?,photo=?,tel=?,address=? where id= ? '
-  connection.query(sql,[req.body.name,req.body.text,req.body.downtime,req.body.money,req.body.photo,req.body.tel,req.body.address,req.body.id], function (err, result, fields) {
+  var sql ='update task set name=?,text=?,downtime=?,money=?,photo=?,tel=?,address=?,style=?, where id= ? '
+  connection.query(sql,[req.body.name,req.body.text,req.body.downtime,req.body.money,req.body.photo,req.body.tel,req.body.address,req.body.style,req.body.id], function (err, result, fields) {
     if (err) {
       console.log('err', err);
       return;
