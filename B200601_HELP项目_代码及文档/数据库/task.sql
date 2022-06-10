@@ -1,0 +1,3 @@
+INSERT INTO `task` (`id`, `name`, `text`, `downtime`, `money`, `tel`, `address`, `photo`, `style`, `finsh`) VALUES (1, '帮我带垃圾下去', '在六楼将垃圾帮我丢到外面垃圾桶 ', '1', 2, '15970625969', 1, '/images/4.jpg', '否', '未完成');
+INSERT INTO `task` (`id`, `name`, `text`, `downtime`, `money`, `tel`, `address`, `photo`, `style`, `finsh`) VALUES (2, '帮带饭', '帮D2  108带饭，黄焖鸡米饭', '1', 3, '15970625969', 3, '/images/3.jpg', '是', '完成');
+INSERT INTO `task` (`id`, `name`, `text`, `downtime`, `money`, `tel`, `address`, `photo`, `style`, `finsh`) VALUES (3, '带奶茶', '在南昌帮我带奶茶', '5', 5, '15970625969', 10, '/images/5.jpg', '否', '未完成');
